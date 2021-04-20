@@ -1,0 +1,22 @@
+.houses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 5%;
+}
+
+.houses__table {
+  background-color: #fff;
+  color: #000;
+  border-collapse: collapse;
+  border: 2px solid grey;
+  width: 100%;
+}
+
+tr, td, th {
+  padding: 5px;
+  border: 1px solid grey;
+  text-align: center;
+}
+
