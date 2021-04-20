@@ -1,7 +1,7 @@
 import axios from "axios";
 import Cookie from "js-cookie";
 
-const URL = `http://test-alpha.reestrdoma.ru/api`;
+const URL = `https://test-alpha.reestrdoma.ru/api`;
 const REQUEST_TIMEOUT = 5000;
 
 const HttpCode = {
