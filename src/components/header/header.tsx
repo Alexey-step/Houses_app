@@ -22,7 +22,7 @@ const Header: React.FC = () => {
       {
         auth ?
           <button onClick={handleLogoutButton} type="button" className="header__logout-btn">Выйти</button> :
-          <Link to="/login" className="header__link">
+          <Link to="/login/" className="header__link">
             Войти
           </Link>
       }
