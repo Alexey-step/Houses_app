@@ -19,7 +19,7 @@ const withError = (Component: React.FC) => {
     return (
       <>
         {
-          isLoading === Status.ERROR ? <Error/> : ``
+          isLoading === Status.ERROR && <Error/>
         }
         <Component {...props}/>
       </>

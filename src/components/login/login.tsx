@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {FormEvent, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {login} from "../../store/api/api-actions";
 import {Redirect} from "react-router-dom"
@@ -8,21 +8,31 @@ import withError from "../../hocs/with-error";
 import "./login.scss";
 
 const Login: React.FC = () => {
-  const emailRef = useRef<HTMLInputElement>(null);
-  const passwordRef = useRef<HTMLInputElement>(null);
+  const [data, setData] = useState({
+    username: ``,
+    password: ``,
+  })
 
   const dispatch = useDispatch();
   const {auth} = useSelector((state: RootState) => state);
+
+  const handleInputChange = (evt: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
+    const {name, value} = evt.target
+    setData({
+      ...data,
+      [name]: value
+    })
+  }
 
   if (auth) {
     return <Redirect to="/"/>;
   }
 
-  const handleSubmit = (evt: React.SyntheticEvent) => {
+  const handleSubmit = (evt: FormEvent) => {
     evt.preventDefault();
     dispatch(login({
-      username: emailRef.current?.value as string,
-      password: passwordRef.current?.value as string
+      username: data.username,
+      password: data.password
     }));
   };
 
@@ -36,23 +46,27 @@ const Login: React.FC = () => {
         method="post"
         id="form"
       >
-        <label className="visually-hidden">Login</label>
+        <label htmlFor="user_email" className="visually-hidden">Login</label>
         <input
           className="login__input"
-          ref={emailRef}
+          value={data.username}
           type="email"
-          name="email"
+          name="username"
+          id="user_email"
           placeholder="Email"
           required
+          onChange={handleInputChange}
         />
-        <label className="visually-hidden">Password</label>
+        <label htmlFor="user_password" className="visually-hidden">Password</label>
         <input
           className="login__input"
-          ref={passwordRef}
+          value={data.password}
           type="password"
           name="password"
+          id="user_password"
           placeholder="Password"
           required
+          onChange={handleInputChange}
         />
         <button
           className="login__submit"

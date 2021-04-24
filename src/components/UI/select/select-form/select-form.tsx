@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import {useSelector} from "react-redux";
 import SelectList from "../select-list/select-list";
-import {RootState} from "../../store/reducer";
+import {RootState} from "../../../../store/reducer";
+import ArrowIcon from "../../arrow-icon/arrow-icon";
 
 import "./select-form.scss";
 
@@ -15,6 +16,7 @@ const Select: React.FC = () => {
 
   return (
     <section className="select">
+      <h2 className="visually-hidden">Список компаний</h2>
       <form className="select__form" action="#" method="get">
         <span className="select__caption">Выберите компанию из списка: </span>
         <div className="select__wrapper">
@@ -27,9 +29,7 @@ const Select: React.FC = () => {
             className={`select__arrow ${isOpen && `select__arrow--open`}`}
             disabled={!auth && true}
           >
-            <svg width="10" height="7" viewBox="0 0 7 4" xmlns="http://www.w3.org/2000/svg">
-              <path fillRule="evenodd" clipRule="evenodd" d="M0 0l3.5 2.813L7 0v1.084L3.5 4 0 1.084V0z"/>
-            </svg>
+            <ArrowIcon/>
           </button>
           {
             isOpen && <SelectList onItemClick={handleSelect} companies={companies} />

@@ -1,22 +1,24 @@
+@import "../UI/theme/variables.scss";
+
 .houses {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 0 5%;
+  display: block;
+  min-width: 320px;
+  padding: 0 20px;
+  overflow-x: scroll;
 }
 
 .houses__table {
-  background-color: #fff;
-  color: #000;
+  background-color: $basic-white;
+  color: $basic-black;
   border-collapse: collapse;
-  border: 2px solid #e5e5e5;
-  width: 100%;
+  border: 2px solid $basic-grey;
+  min-width: 600px;
+  margin: 0 auto;
 }
 
 tr, td, th {
   padding: 5px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid $basic-grey;
   text-align: center;
 }
 

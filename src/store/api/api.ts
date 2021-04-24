@@ -1,12 +1,6 @@
-import axios from "axios";
+import axios, {AxiosError, AxiosResponse} from "axios";
 import Cookie from "js-cookie";
-
-const URL = `http://test-alpha.reestrdoma.ru/api`;
-const REQUEST_TIMEOUT = 5000;
-
-const HttpCode = {
-  UNAUTHORIZED: 401,
-};
+import {URL, REQUEST_TIMEOUT, HttpCode} from "./const";
 
 export const createAPI = (onUnauthorized: () => void) => {
   const api = axios.create({
@@ -15,12 +9,12 @@ export const createAPI = (onUnauthorized: () => void) => {
     withCredentials: true,
   });
 
-  const onSuccess = (response: any) => response;
+  const onSuccess = (response: AxiosResponse) => response;
 
-  const onFail = (err: any) => {
+  const onFail = (err: AxiosError) => {
     const {response} = err;
 
-    if (response.status === HttpCode.UNAUTHORIZED) {
+    if (response?.status === HttpCode.UNAUTHORIZED) {
       onUnauthorized();
       Cookie.remove(`token`)
 

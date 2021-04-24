@@ -1,10 +1,10 @@
 import React from "react";
 import {useSelector} from "react-redux";
 import {RootState} from "../../store/reducer";
-import {House} from "../../propTypes";
+import {House} from "../../types";
 import {Status} from "../../const";
-import Spinner from "../spinner/spinner";
-import HousesItem from "../houses-item/houses-item";
+import Spinner from "../UI/spinner/spinner";
+import HousesItem from "./houses-item/houses-item";
 
 import "./houses.scss"
 
@@ -17,6 +17,7 @@ const Houses: React.FC = () => {
 
   return (
     <section className="houses">
+      <h2 className="visually-hidden">Таблица домов</h2>
       <table className="houses__table">
         <thead>
           <tr>
@@ -26,11 +27,13 @@ const Houses: React.FC = () => {
             <th>Дата добавления</th>
           </tr>
         </thead>
+        <tbody>
         {
           houses.map((house: House) =>
             <HousesItem house={house} key={house.id}/>
           )
         }
+        </tbody>
       </table>
     </section>
   )

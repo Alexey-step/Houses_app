@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import Header from "../header/header"
-import Select from "../select-form/select-form";
+import Select from "../UI/select/select-form/select-form";
 import {fetchHousesList, fetchCompaniesList} from "../../store/api/api-actions"
 import {RootState} from "../../store/reducer";
 import {useDispatch, useSelector} from "react-redux";
 import Houses from "../houses/houses";
-import Paginate from "../paginate/paginate"
+import Paginate from "../UI/paginate/paginate"
 import {HOUSES_PER_PAGE} from "../../const"
 import withError from "../../hocs/with-error";
 

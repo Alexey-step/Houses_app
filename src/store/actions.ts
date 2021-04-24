@@ -1,4 +1,4 @@
-import {Companies, House} from "../propTypes";
+import {Companies, House} from "../types";
 
 export enum ActionType {
   SET_COMPANIES = `setCompanies`,

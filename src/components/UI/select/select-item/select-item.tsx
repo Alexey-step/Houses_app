@@ -1,7 +1,7 @@
 import React from "react";
-import {Companies} from "../../propTypes";
+import {Companies} from "../../../../types";
 import {useDispatch} from "react-redux";
-import {setCompanie} from "../../store/action-creators";
+import {setCompanie} from "../../../../store/action-creators";
 
 interface Props {
   item: Companies,

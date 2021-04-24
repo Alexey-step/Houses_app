@@ -1,8 +1,8 @@
 import React from "react";
 import SelectItem from "../select-item/select-item";
-import {Companies} from "../../propTypes";
+import {Companies} from "../../../../types";
 import {useSelector} from "react-redux";
-import {RootState} from "../../store/reducer";
+import {RootState} from "../../../../store/reducer";
 
 interface Props {
   companies: Array<Companies>,

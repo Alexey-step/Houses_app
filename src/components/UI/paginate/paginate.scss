@@ -1,3 +1,5 @@
+@import "../theme/variables.scss";
+
 .paginate__wrapper {
   width: 100%;
   padding: 0 20px;
@@ -16,9 +18,9 @@
 }
 
 .pagination > .active > a{
-  background-color: #808080;
-  border-color: #808080;
-  color: #fff;
+  background-color: $dark-grey;
+  border-color: $dark-grey;
+  color: $basic-white;
 }
 
 .pagination > li {
@@ -27,7 +29,7 @@
 
 .pagination > li > a{
   display: inline-block;
-  border: 1px solid #808080;
+  border: 1px solid $dark-grey;
   padding: 5px 10px;
   outline: none;
   cursor: pointer;
@@ -39,14 +41,14 @@
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
 .pagination > .active > span:focus{
-  background-color: #808080;
-  border-color: #808080;
+  background-color: $dark-grey;
+  border-color: $dark-grey;
   outline: none ;
 }
 
 .pagination > li > a,
 .pagination > li > span{
-  color: #808080;
+  color: $dark-grey;
 }
 
 .pagination > li:first-child > a,

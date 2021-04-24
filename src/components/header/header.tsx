@@ -21,7 +21,11 @@ const Header: React.FC = () => {
     <div className="header">
       {
         auth ?
-          <button onClick={handleLogoutButton} type="button" className="header__logout-btn">Выйти</button> :
+          <button
+            onClick={handleLogoutButton}
+            type="button"
+            className="header__logout-btn"
+          >Выйти</button> :
           <Link to="/login" className="header__link">
             Войти
           </Link>

@@ -1,6 +1,6 @@
 import {createReducer} from "@reduxjs/toolkit";
 import * as ActionCreator from "./action-creators";
-import {Companies, House} from "../propTypes";
+import {Companies, House} from "../types";
 import {Status} from "../const";
 
 interface InitialStateTypes {
